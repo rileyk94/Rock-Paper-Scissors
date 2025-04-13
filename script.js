@@ -89,11 +89,11 @@ function playGame() {
     console.log(`Your score is ${playerScore}`)
     console.log(`The Computer Score is ${cpuScore}`)
     if ((playerScore-cpuScore)>0) {
-        console.log("You Win!")
+        alert("You Win!")
     } else if ((playerScore-cpuScore) < 0) {
-        console.log("You Lose")
+        alert("You Lose")
     } else {
-        console.log("It's a Tie!")
+        alert("It's a Tie!")
     }
 }
 
