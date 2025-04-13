@@ -38,12 +38,12 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0
-
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection)
 
 //actually play the game with a function:
 function playRound (humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
     if (computerChoice === rock) {
         if (humanChoice === paper) {
             humanScore += 1;
