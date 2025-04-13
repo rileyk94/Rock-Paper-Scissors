@@ -35,3 +35,44 @@ function getHumanChoice() {
         }
     }
 }
+
+let humanScore = 0;
+let computerScore = 0
+
+
+//actually play the game with a function:
+function playRound (humanChoice, computerChoice) {
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+    if (computerChoice === rock) {
+        if (humanChoice === paper) {
+            humanScore += 1;
+            console.log("You Win! Paper beats Rock!");
+        } else if (humanChoice === scissors) {
+            computerScore +=1;
+            console.log("You Lose! Rock beats Scissors")
+        } else {
+            console.log("It's a Tie! You both chose Rock!")
+        }
+    } else if (computerChoice === paper) {
+        if (humanChoice === scissors) {
+            humanScore += 1;
+            console.log("You Win! Scissors beats Paper!");
+        } else if (humanChoice === rock) {
+            computerScore +=1;
+            console.log("You Lose! Paper beats Rock!")
+        } else {
+            console.log("It's a Tie! You both chose Paper!")
+        }
+    } else {
+        if (humanChoice === rock) {
+            humanScore += 1;
+            console.log("You Win! Rock beats Scissors!");
+        } else if (humanChoice === paper) {
+            computerScore +=1;
+            console.log("You Lose! Scissors beats Paper!")
+        } else {
+            console.log("It's a Tie! You both chose Scissors!")
+        }
+    }
+}
