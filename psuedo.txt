@@ -1,0 +1,59 @@
+create 3 variables for rock, paper, and scissors
+rock = 1
+paper = 2
+scissors = 3
+Get Computer Choice:
+create a function that will generate a computer Choice: (getComputerChoice)
+    assign random number between 1 and 3 to variable 'choice'
+    create return variable named cpuChoice
+    If choice == 1 return cpuChoice = rock
+    if choice == 2 return cpuChoice = paper
+    if choice == 3 return cpuChoice = scissors;
+create function to get user choice: (getHumanChoice)
+    ask user for input "rock" "paper" or "scissors" and assign input to variable player
+    transform input so that it is all lowercase, then check to see if it matches "rock paper or scissors"
+    if it doesn't match ask the user to try again
+    keep asking until the user gets it right, using a while loop
+    create output variable for the player choice
+    if input = "rock" return PlayerChoice = rock
+    if input = "paper" return PlayerChoice = paper
+    if input = "scissors" return PlayerChoice = scissors;
+create variable for player score, initialized at zero (humanScore)
+create variable for computer score, initialized at zero (computerScore)
+actually play the game with a function: (playRound)
+    create boolean for player victory, initialized to false
+    create boolean for tie, initialized to false
+    if the computer chose rock:
+        if the player chose paper
+            increment player score by 1
+            player victory is true
+        else if the player chose scissors
+            increment computer score by 1
+            player victory is false
+        else tie is true
+    if the computer chose paper:
+        if the player chose rock:
+            increment computer score by 1
+            player victory is false
+        else if the player chose scissors:
+            increment player score by 1
+            player victory is true
+        else tie is true
+    if the computer chose scissors:
+        if the player chose rock:
+            increment player score by 1
+            player victory is true
+        if player chose paper:
+            increment computer score by 1
+            player victory is false
+        else tie is true
+    run the computer choice function
+    run the player choice function
+    if tie is true:
+        output "it's a tie"
+    else if player victory is true:
+        output "You Won!"
+    else output "you lost!"
+
+
+
