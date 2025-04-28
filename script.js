@@ -22,15 +22,15 @@ buttons.appendChild(scissorsButton);
 let getHumanChoice = "";
 
 rockButton.addEventListener("click", () => {
-    getHumanChoice = "rock"
+    getHumanChoice = 1
 })
 
 paperButton.addEventListener("click", () => {
-    getHumanChoice = "paper"
+    getHumanChoice = 3
 })
 
 scissorsButton.addEventListener("click", () => {
-    getHumanChoice = "scissors"
+    getHumanChoice = 2
 })
 
 //create a function that will generate a computer Choice:
@@ -65,6 +65,15 @@ function getComputerChoice() {
 //         }
 //     }
 // }
+const results = document.createElement("div");
+let resultOutput = document.createElement("h3");
+let yourScore = document.createElement("p");
+let thereScore = document.createElement("p");
+
+document.body.appendChild(results);
+results.appendChild(resultOutput);
+results.appendChild(yourScore);
+results.appendChild(thereScore);
 
 //actually play the game with a function:
 function playRound (humanScore, computerScore) {
@@ -75,57 +84,66 @@ function playRound (humanScore, computerScore) {
     if (computerChoice === rock) {
         if (humanChoice === paper) {
             console.log("You Win! Paper beats Rock!");
+            resultOutput.textContent = "You Win! Paper beats Rock!";
             return [player += 1, computer];
         } else if (humanChoice === scissors) {
             console.log("You Lose! Rock beats Scissors")
+            resultOutput.textContent = "You Lose! Rock beats Scissors";
             return [player, computer +=1];
         } else {
             console.log("It's a Tie! You both chose Rock!")
+            resultOutput.textContent = "It's a Tie! You both chose Rock!";
             return [player, computer];
         }
     } else if (computerChoice === paper) {
         if (humanChoice === scissors) {
             console.log("You Win! Scissors beats Paper!");
+            resultOutput.textContent = "You Win! Scissors beats Paper!";
             return [player += 1, computer]
         } else if (humanChoice === rock) {
             console.log("You Lose! Paper beats Rock!")
+            resultOutput.textContent = "You Lose! Paper beats Rock!";
             return [player, computer +=1];
         } else {
             console.log("It's a Tie! You both chose Paper!")
+            resultOutput.textContent = "It's a Tie! You both chose Paper!";
             return [player, computer];
         }
     } else {
         if (humanChoice === rock) {
             console.log("You Win! Rock beats Scissors!");
+            resultOutput.textContent = "You Win! Rock beats Scissors!";
             return [player += 1, computer]
         } else if (humanChoice === paper) {
             console.log("You Lose! Scissors beats Paper!")
+            resultOutput.textContent = "You Lose! Scissors beats Paper!";
             return [player, computer +=1];
         } else {
             console.log("It's a Tie! You both chose Scissors!")
+            resultOutput.textContent = "It's a Tie! You both chose Scissors!";
             return [player, computer];
         }
     }
 }
 
-function playGame() {
-    let playerScore = 0;
-    let cpuScore = 0;
-    let increment = 0;
-    while (increment < 5) {
-        [playerScore,cpuScore] = playRound(playerScore, cpuScore);
-        increment +=1;
-    }
-    console.log(`Your score is ${playerScore}`)
-    console.log(`The Computer Score is ${cpuScore}`)
-    if ((playerScore-cpuScore)>0) {
-        alert("You Win!")
-    } else if ((playerScore-cpuScore) < 0) {
-        alert("You Lose")
-    } else {
-        alert("It's a Tie!")
-    }
-}
+// function playGame() {
+//     let playerScore = 0;
+//     let cpuScore = 0;
+//     let increment = 0;
+//     while (increment < 5) {
+//         [playerScore,cpuScore] = playRound(playerScore, cpuScore);
+//         increment +=1;
+//     }
+//     console.log(`Your score is ${playerScore}`)
+//     console.log(`The Computer Score is ${cpuScore}`)
+//     if ((playerScore-cpuScore)>0) {
+//         alert("You Win!")
+//     } else if ((playerScore-cpuScore) < 0) {
+//         alert("You Lose")
+//     } else {
+//         alert("It's a Tie!")
+//     }
+// }
 
 
 
