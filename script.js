@@ -3,6 +3,36 @@ const rock = 1;
 const scissors = 2;
 const paper = 3;
 
+//add choice buttons to the dom
+const buttons = document.createElement("div");
+const rockButton = document.createElement("button"); 
+const paperButton = document.createElement("button"); 
+const scissorsButton = document.createElement("button"); 
+
+//Add labels for buttons
+rockButton.textContent = "Rock";
+paperButton.textContent = "Paper";
+scissorsButton.textContent = "Scissors";
+
+document.body.appendChild(buttons);
+buttons.appendChild(rockButton);
+buttons.appendChild(paperButton);
+buttons.appendChild(scissorsButton);
+
+let getHumanChoice = "";
+
+rockButton.addEventListener("click", () => {
+    getHumanChoice = "rock"
+})
+
+paperButton.addEventListener("click", () => {
+    getHumanChoice = "paper"
+})
+
+scissorsButton.addEventListener("click", () => {
+    getHumanChoice = "scissors"
+})
+
 //create a function that will generate a computer Choice:
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*(4-1)+1);
@@ -16,29 +46,29 @@ function getComputerChoice() {
 }
 
 //create function to get user choice:
-function getHumanChoice() {
-    let correctInput = false;
-    while (correctInput === false) {
-        let userInput = prompt("Choose Rock, Paper or Scissors: ")
-        userInput = userInput.toLowerCase();
-        if (userInput === "rock") {
-            return rock
-            correctInput = true;
-        } else if (userInput === "scissors") {
-            return scissors;
-            correctInput = true;
-        } else if (userInput === "paper") {
-            return paper;
-            correctInput = true;
-        } else {
-            console.log("Incorrect input, please try again")
-        }
-    }
-}
+// function getHumanChoice() {
+//     let correctInput = false;
+//     while (correctInput === false) {
+//         let userInput = prompt("Choose Rock, Paper or Scissors: ")
+//         userInput = userInput.toLowerCase();
+//         if (userInput === "rock") {
+//             return rock
+//             correctInput = true;
+//         } else if (userInput === "scissors") {
+//             return scissors;
+//             correctInput = true;
+//         } else if (userInput === "paper") {
+//             return paper;
+//             correctInput = true;
+//         } else {
+//             console.log("Incorrect input, please try again")
+//         }
+//     }
+// }
 
 //actually play the game with a function:
 function playRound (humanScore, computerScore) {
-    const humanChoice = getHumanChoice();
+    const humanChoice = getHumanChoice;
     const computerChoice = getComputerChoice();
     let player = humanScore;
     let computer = computerScore;
@@ -96,6 +126,8 @@ function playGame() {
         alert("It's a Tie!")
     }
 }
+
+
 
 let play = playGame();
 console.log(play)
