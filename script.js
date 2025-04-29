@@ -40,8 +40,8 @@ resultOutput.textContent = "Let's Play!"
 reset.addEventListener("click", () => {
     playerScore = 0;
     cpuScore = 0;
-    yourScore.textContent = playerScore;
-    thereScore.textContent = cpuScore;
+    yourScore.textContent = `Player Score: ${playerScore}`;
+    thereScore.textContent = `Computer Score: ${cpuScore}`;
     resultOutput.textContent = "Play Again!"
 });
 
@@ -120,8 +120,8 @@ function playRound () {
             resultOutput.textContent = "It's a Tie! You both chose Scissors!";
         }
     }
-    yourScore.textContent = playerScore;
-    thereScore.textContent = cpuScore;
+    yourScore.textContent = `Player Score: ${playerScore}`;
+    thereScore.textContent = `Computer Score: ${cpuScore}`;
 
     if (playerScore >= 5) {
         resultOutput.textContent = "You Win! Press Reset to Start Over"
