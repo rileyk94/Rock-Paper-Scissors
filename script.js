@@ -19,18 +19,31 @@ buttons.appendChild(rockButton);
 buttons.appendChild(paperButton);
 buttons.appendChild(scissorsButton);
 
-let getHumanChoice = "";
+const results = document.createElement("div");
+let resultOutput = document.createElement("h3");
+let yourScore = document.createElement("p");
+let thereScore = document.createElement("p");
+
+document.body.appendChild(results);
+results.appendChild(resultOutput);
+results.appendChild(yourScore);
+results.appendChild(thereScore);
+
+let getHumanChoice;
 
 rockButton.addEventListener("click", () => {
     getHumanChoice = 1
+    playRound();
 })
 
 paperButton.addEventListener("click", () => {
     getHumanChoice = 3
+    playRound();
 })
 
 scissorsButton.addEventListener("click", () => {
     getHumanChoice = 2
+    playRound();
 })
 
 //create a function that will generate a computer Choice:
@@ -65,63 +78,57 @@ function getComputerChoice() {
 //         }
 //     }
 // }
-const results = document.createElement("div");
-let resultOutput = document.createElement("h3");
-let yourScore = document.createElement("p");
-let thereScore = document.createElement("p");
 
-document.body.appendChild(results);
-results.appendChild(resultOutput);
-results.appendChild(yourScore);
-results.appendChild(thereScore);
+
 
 //actually play the game with a function:
-function playRound (humanScore, computerScore) {
+function playRound () {
+    console.log(getHumanChoice)
     const humanChoice = getHumanChoice;
     const computerChoice = getComputerChoice();
-    let player = humanScore;
-    let computer = computerScore;
+    // let player = 0; //humanScore;
+    // let computer = 0; //computerScore;
     if (computerChoice === rock) {
         if (humanChoice === paper) {
             console.log("You Win! Paper beats Rock!");
             resultOutput.textContent = "You Win! Paper beats Rock!";
-            return [player += 1, computer];
+            // return [player += 1, computer];
         } else if (humanChoice === scissors) {
             console.log("You Lose! Rock beats Scissors")
             resultOutput.textContent = "You Lose! Rock beats Scissors";
-            return [player, computer +=1];
+            // return [player, computer +=1];
         } else {
             console.log("It's a Tie! You both chose Rock!")
             resultOutput.textContent = "It's a Tie! You both chose Rock!";
-            return [player, computer];
+            // return [player, computer];
         }
     } else if (computerChoice === paper) {
         if (humanChoice === scissors) {
             console.log("You Win! Scissors beats Paper!");
             resultOutput.textContent = "You Win! Scissors beats Paper!";
-            return [player += 1, computer]
+            // return [player += 1, computer]
         } else if (humanChoice === rock) {
             console.log("You Lose! Paper beats Rock!")
             resultOutput.textContent = "You Lose! Paper beats Rock!";
-            return [player, computer +=1];
+            // return [player, computer +=1];
         } else {
             console.log("It's a Tie! You both chose Paper!")
             resultOutput.textContent = "It's a Tie! You both chose Paper!";
-            return [player, computer];
+            // return [player, computer];
         }
     } else {
         if (humanChoice === rock) {
             console.log("You Win! Rock beats Scissors!");
             resultOutput.textContent = "You Win! Rock beats Scissors!";
-            return [player += 1, computer]
+            // return [player += 1, computer]
         } else if (humanChoice === paper) {
             console.log("You Lose! Scissors beats Paper!")
             resultOutput.textContent = "You Lose! Scissors beats Paper!";
-            return [player, computer +=1];
+            // return [player, computer +=1];
         } else {
             console.log("It's a Tie! You both chose Scissors!")
             resultOutput.textContent = "It's a Tie! You both chose Scissors!";
-            return [player, computer];
+            // return [player, computer];
         }
     }
 }
@@ -147,5 +154,5 @@ function playRound (humanScore, computerScore) {
 
 
 
-let play = playGame();
-console.log(play)
+// let play = playGame();
+// console.log(play)
