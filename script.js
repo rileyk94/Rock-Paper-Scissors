@@ -10,6 +10,8 @@ const rockButton = document.createElement("button");
 const paperButton = document.createElement("button"); 
 const scissorsButton = document.createElement("button"); 
 
+buttons.classList.add("play-buttons");
+
 //Add labels for buttons
 rockButton.textContent = "Rock";
 paperButton.textContent = "Paper";
