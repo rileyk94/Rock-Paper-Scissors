@@ -128,7 +128,5 @@ function playRound () {
     } else if (cpuScore >= 5) {
         resultOutput.textContent = "The Computer Wins! Press Reset to Start Over"
     }
-
-    // console.log(playerScore)
 }
 
